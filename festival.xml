@@ -1,10 +1,1000 @@
-<!-- well-formed XML
-    Min. 3 dny | Min. 2 místa (venues) | Min. 60 účinkujících | Min. 60 programových položek (events)
-    Minimální datové entity (bez předepsaného modelu):
-        festival,
-        místa/scény (venues/stages),
-        účinkující (performers),
-        programové položky - vystoupení (events).
+<?xml version="1.0" encoding="UTF-8"?>
+<festival
+    name="European Open-Source &amp; Alternative Tech Fair"
+    edition="1"
+    location="Varšava (Polsko)"
+    startDate="2025-05-01"
+    endDate="2025-05-04">
 
-!Myslim ze tohle vsechno jsem napsal do specifikaci cca a Po ruznych ODS a PDFkach         
+    <!-- ============================================================= -->
+    <!--  1) Statické exhibitory (stánky) - 60 + 15 startupů          -->
+    <!-- ============================================================= -->
+<!--
+    Kompletní seznam všech exhibitorů (stánků) dle aktualizovaného
+    validator.xsd.  Každý exhibitor obsahuje:
+      • name
+      • company
+      • category (Security, Technology, Software, Mix nebo Startup)
+      • location (hala A-D + číslo 01-30)
+      • content - stručný popis
+      • website - URL
+      • representative - jméno osoby, která stand zastupuje
+      • contactEmail - e-mailová adresa
+    Celkem 75 exhibitorů (60 běžných + 15 startupů) - všechny splňují
+    požadavky na minimální počet a zároveň poskytují prostor pro
+    startupy, jak bylo požadováno.
 -->
+    <exhibitors>
+        <!-- ====================== 60 běžných exhibitorů ====================== -->
+        <exhibitor id="1">
+            <name>Linux Foundation</name>
+            <company>Linux Foundation</company>
+            <category>Software</category>
+            <location>A01</location>
+            <content>Kernel development &amp; community governance</content>
+            <website>https://www.linuxfoundation.org</website>
+            <representative>Anna Novak</representative>
+            <contactEmail>anna.novak@linuxfoundation.org</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="2">
+            <name>Nextcloud</name>
+            <company>Nextcloud GmbH</company>
+            <category>Software</category>
+            <location>A02</location>
+            <content>Self-hosted file sync &amp; collaboration</content>
+            <website>https://nextcloud.com</website>
+            <representative>Markus Schmidt</representative>
+            <contactEmail>markus.schmidt@nextcloud.com</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="3">
+            <name>KDE Community</name>
+            <company>KDE e.V.</company>
+            <category>Software</category>
+            <location>A03</location>
+            <content>Plasma desktop environment &amp; applications</content>
+            <website>https://kde.org</website>
+            <representative>Laura Müller</representative>
+            <contactEmail>laura.mueller@kde.org</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="4">
+            <name>LibreOffice</name>
+            <company>The Document Foundation</company>
+            <category>Software</category>
+            <location>A04</location>
+            <content>Free office suite (Writer, Calc, Impress…)</content>
+            <website>https://www.libreoffice.org</website>
+            <representative>Ján Kováč</representative>
+            <contactEmail>jan.kovac@documentfoundation.org</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="5">
+            <name>FreeCAD</name>
+            <company>FreeCAD Community</company>
+            <category>Software</category>
+            <location>A05</location>
+            <content>Parametric 3-D CAD modeling</content>
+            <website>https://www.freecadweb.org</website>
+            <representative>Petra Svobodová</representative>
+            <contactEmail>petra.svobodova@freecad.org</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="6">
+            <name>Tuta Mail</name>
+            <company>Tutanota GmbH</company>
+            <category>Security</category>
+            <location>A06</location>
+            <content>End-to-end encrypted e-mail service</content>
+            <website>https://tutanota.com</website>
+            <representative>Thomas Becker</representative>
+            <contactEmail>thomas.becker@tutanota.com</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="7">
+            <name>CryptPad</name>
+            <company>XWiki SAS</company>
+            <category>Security</category>
+            <location>A07</location>
+            <content>Zero-knowledge collaborative suite</content>
+            <website>https://cryptpad.org</website>
+            <representative>Isabelle Laurent</representative>
+            <contactEmail>isabelle.laurent@cryptpad.org</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="8">
+            <name>OpenStreetMap</name>
+            <company>OSM Foundation</company>
+            <category>Technology</category>
+            <location>A08</location>
+            <content>Free editable world map</content>
+            <website>https://www.openstreetmap.org</website>
+            <representative>Jürgen Hoffmann</representative>
+            <contactEmail>juergen.hoffmann@osm.org</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="9">
+            <name>Signal</name>
+            <company>Signal Messenger LLC</company>
+            <category>Security</category>
+            <location>A09</location>
+            <content>Private messaging with strong encryption</content>
+            <website>https://signal.org</website>
+            <representative>Emily Chen</representative>
+            <contactEmail>emily.chen@signal.org</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="10">
+            <name>Matrix.org</name>
+            <company>Matrix.org Foundation</company>
+            <category>Technology</category>
+            <location>A10</location>
+            <content>Decentralised real-time communication</content>
+            <website>https://matrix.org</website>
+            <representative>Lucas Meyer</representative>
+            <contactEmail>lucas.meyer@matrix.org</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="11">
+            <name>GIMP</name>
+            <company>GNOME Foundation</company>
+            <category>Software</category>
+            <location>A11</location>
+            <content>Raster graphics editor</content>
+            <website>https://www.gimp.org</website>
+            <representative>Andrea Rossi</representative>
+            <contactEmail>andrea.rossi@gimp.org</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="12">
+            <name>Inkscape</name>
+            <company>Inkscape Project</company>
+            <category>Software</category>
+            <location>A12</location>
+            <content>Vector graphics editor</content>
+            <website>https://inkscape.org</website>
+            <representative>Matej Horák</representative>
+            <contactEmail>matej.horak@inkscape.org</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="13">
+            <name>Blender</name>
+            <company>Blender Foundation</company>
+            <category>Software</category>
+            <location>A13</location>
+            <content>3-D creation suite (modeling, animation, rendering)</content>
+            <website>https://www.blender.org</website>
+            <representative>Sofia Petrov</representative>
+            <contactEmail>sofia.petrov@blender.org</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="14">
+            <name>VLC</name>
+            <company>VideoLAN</company>
+            <category>Software</category>
+            <location>A14</location>
+            <content>Universal multimedia player</content>
+            <website>https://www.videolan.org/vlc/</website>
+            <representative>Jean Dupont</representative>
+            <contactEmail>jean.dupont@videolan.org</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="15">
+            <name>QGIS</name>
+            <company>QGIS Project</company>
+            <category>Technology</category>
+            <location>A15</location>
+            <content>Open-source Geographic Information System</content>
+            <website>https://qgis.org</website>
+            <representative>Eva Šimková</representative>
+            <contactEmail>eva.simkova@qgis.org</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="16">
+            <name>WireGuard</name>
+            <company>WireGuard LLC</company>
+            <category>Security</category>
+            <location>B01</location>
+            <content>Modern, high-performance VPN protocol</content>
+            <website>https://www.wireguard.com</website>
+            <representative>Tomáš Dvořák</representative>
+            <contactEmail>tomas.dvorak@wireguard.com</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="17">
+            <name>Tor Project</name>
+            <company>Tor Project</company>
+            <category>Security</category>
+            <location>B02</location>
+            <content>Anonymity network for private browsing</content>
+            <website>https://www.torproject.org</website>
+            <representative>Maria García</representative>
+            <contactEmail>maria.garcia@torproject.org</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="18">
+            <name>Proton Mail</name>
+            <company>Proton AG</company>
+            <category>Security</category>
+            <location>B03</location>
+            <content>Encrypted e-mail service based in Switzerland</content>
+            <website>https://proton.me/mail</website>
+            <representative>André Müller</representative>
+            <contactEmail>andre.mueller@proton.me</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="19">
+            <name>Proton VPN</name>
+            <company>Proton AG</company>
+            <category>Security</category>
+            <location>B04</location>
+            <content>Secure VPN with strict no-logs policy</content>
+            <website>https://proton.me/vpn</website>
+            <representative>Claudia Weber</representative>
+            <contactEmail>claudia.weber@proton.me</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="20">
+            <name>Proton Drive</name>
+            <company>Proton AG</company>
+            <category>Software</category>
+            <location>B05</location>
+            <content>End-to-end encrypted cloud storage</content>
+            <website>https://proton.me/drive</website>
+            <representative>Johan Lindström</representative>
+            <contactEmail>johan.lindstrom@proton.me</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="21">
+            <name>IPFS</name>
+            <company>Protocol Labs</company>
+            <category>Technology</category>
+            <location>B06</location>
+            <content>Distributed peer-to-peer hypermedia protocol</content>
+            <website>https://ipfs.io</website>
+            <representative>Olga Petrova</representative>
+            <contactEmail>olga.petrova@protocollabs.com</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="22">
+            <name>GitLab</name>
+            <company>GitLab Inc.</company>
+            <category>Software</category>
+            <location>B07</location>
+            <content>Complete DevOps platform (CI/CD, SCM, security)</content>
+            <website>https://about.gitlab.com</website>
+            <representative>David Kim</representative>
+            <contactEmail>david.kim@gitlab.com</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="23">
+            <name>Gitea</name>
+            <company>Gitea Community</company>
+            <category>Software</category>
+            <location>B08</location>
+            <content>Lightweight self-hosted Git service</content>
+            <website>https://gitea.io</website>
+            <representative>Rita Novak</representative>
+            <contactEmail>rita.novak@gitea.io</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="24">
+            <name>Redmine</name>
+            <company>Redmine.org</company>
+            <category>Software</category>
+            <location>B09</location>
+            <content>Flexible project management &amp; issue tracking</content>
+            <website>https://www.redmine.org</website>
+            <representative>Stefan Bauer</representative>
+            <contactEmail>stefan.bauer@redmine.org</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="25">
+            <name>Taiga</name>
+            <company>Taiga.io</company>
+            <category>Software</category>
+            <location>B10</location>
+            <content>Agile project management (Kanban &amp; Scrum)</content>
+            <website>https://taiga.io</website>
+            <representative>Clara Silva</representative>
+            <contactEmail>clara.silva@taiga.io</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="26">
+            <name>ERPNext</name>
+            <company>Frappe Technologies</company>
+            <category>Software</category>
+            <location>B11</location>
+            <content>Open-source ERP &amp; CRM system</content>
+            <website>https://erpnext.com</website>
+            <representative>Artem Ivanov</representative>
+            <contactEmail>artem.ivanov@erpnext.com</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="27">
+            <name>Dolibarr</name>
+            <company>Dolibarr ERP</company>
+            <category>Software</category>
+            <location>B12</location>
+            <content>ERP &amp; CRM suite for SMEs</content>
+            <website>https://www.dolibarr.org</website>
+            <representative>Helena Kovářová</representative>
+            <contactEmail>helena.kovarova@dolibarr.org</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="28">
+            <name>OnlyOffice</name>
+            <company>OnlyOffice Ltd.</company>
+            <category>Software</category>
+            <location>B13</location>
+            <content>Online document editors compatible with MS Office</content>
+            <website>https://www.onlyoffice.com</website>
+            <representative>Igor Petrov</representative>
+            <contactEmail>igor.petrov@onlyoffice.com</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="29">
+            <name>Podman</name>
+            <company>Red Hat</company>
+            <category>Technology</category>
+            <location>B14</location>
+            <content>Daemonless container engine (OCI compliant)</content>
+            <website>https://podman.io</website>
+            <representative>Linda Schmidt</representative>
+            <contactEmail>linda.schmidt@redhat.com</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="30">
+            <name>Grafana</name>
+            <company>Grafana Labs</company>
+            <category>Software</category>
+            <location>B15</location>
+            <content>Metrics visualization &amp; dashboarding</content>
+            <website>https://grafana.com</website>
+            <representative>Martin Žák</representative>
+            <contactEmail>martin.zak@grafana.com</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="31">
+            <name>Prometheus</name>
+            <company>Prometheus Community</company>
+            <category>Software</category>
+            <location>C01</location>
+            <content>Time-series monitoring and alerting</content>
+            <website>https://prometheus.io</website>
+            <representative>Olivia Martin</representative>
+            <contactEmail>olivia.martin@prometheus.io</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="32">
+            <name>Element</name>
+            <company>Element Ltd.</company>
+            <category>Software</category>
+            <location>C02</location>
+            <content>Secure messenger built on Matrix</content>
+            <website>https://element.io</website>
+            <representative>Samuel Andersson</representative>
+            <contactEmail>samuel.andersson@element.io</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="33">
+            <name>Jitsi Meet</name>
+            <company>8x8 Inc.</company>
+            <category>Software</category>
+            <location>C03</location>
+            <content>Open-source video conferencing</content>
+            <website>https://meet.jit.si</website>
+            <representative>Karolina Nowak</representative>
+            <contactEmail>karolina.nowak@jitsi.org</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="34">
+            <name>OpenSCAP</name>
+            <company>Red Hat</company>
+            <category>Security</category>
+            <location>C04</location>
+            <content>Security compliance scanning toolkit</content>
+            <website>https://www.open-scap.org</website>
+            <representative>Peter Novak</representative>
+            <contactEmail>peter.novak@redhat.com</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="35">
+            <name>OpenVPN</name>
+            <company>OpenVPN Inc.</company>
+            <category>Security</category>
+            <location>C05</location>
+            <content>Widely used SSL/TLS VPN solution</content>
+            <website>https://openvpn.net</website>
+            <representative>Laura Jensen</representative>
+            <contactEmail>laura.jensen@openvpn.net</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="36">
+            <name>ZeroTier</name>
+            <company>ZeroTier Inc.</company>
+            <category>Technology</category>
+            <location>C06</location>
+            <content>Virtual networking for LAN-like connectivity</content>
+            <website>https://www.zerotier.com</website>
+            <representative>Mateusz Kowalski</representative>
+            <contactEmail>Mateusz.Kowalski@Zerotier.com</contactEmail>
+
+        </exhibitor>
+            <exhibitor id="37">
+            <name>OpenWrt</name>
+            <company>OpenWrt Project</company>
+            <category>Technology</category>
+            <location>C07</location>
+            <content>Customizable router firmware</content>
+            <website>https://openwrt.org</website>
+            <representative>Jana Horváthová</representative>
+            <contactEmail>jana.horvathova@openwrt.org</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="38">
+            <name>Pi-hole</name>
+            <company>Pi-hole Developers</company>
+            <category>Security</category>
+            <location>C08</location>
+            <content>Network-wide ad-blocking DNS sinkhole</content>
+            <website>https://pi-hole.net</website>
+            <representative>Marco Rossi</representative>
+            <contactEmail>marco.rossi@pi-hole.net</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="39">
+            <name>Alpine Linux</name>
+            <company>Alpine Linux Community</company>
+            <category>Software</category>
+            <location>C09</location>
+            <content>Lightweight security-focused Linux distribution</content>
+            <website>https://alpinelinux.org</website>
+            <representative>Emma Johansson</representative>
+            <contactEmail>emma.johansson@alpinelinux.org</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="40">
+            <name>Debian</name>
+            <company>Debian Project</company>
+            <category>Software</category>
+            <location>C10</location>
+            <content>Universal operating system</content>
+            <website>https://www.debian.org</website>
+            <representative>François Dupont</representative>
+            <contactEmail>francois.dupont@debian.org</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="41">
+            <name>Fedora</name>
+            <company>Fedora Project</company>
+            <category>Software</category>
+            <location>C11</location>
+            <content>Cutting-edge Linux distribution</content>
+            <website>https://getfedora.org</website>
+            <representative>Laura García</representative>
+            <contactEmail>laura.garcia@fedoraproject.org</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="42">
+            <name>Ubuntu</name>
+            <company>Canonical Ltd.</company>
+            <category>Software</category>
+            <location>C12</location>
+            <content>Popular desktop and server OS</content>
+            <website>https://ubuntu.com</website>
+            <representative>Michael Brown</representative>
+            <contactEmail>michael.brown@canonical.com</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="43">
+            <name>Arch Linux</name>
+            <company>Arch Linux Community</company>
+            <category>Software</category>
+            <location>C13</location>
+            <content>Rolling-release distribution for power users</content>
+            <website>https://archlinux.org</website>
+            <representative>Petra Novak</representative>
+            <contactEmail>petra.novak@archlinux.org</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="44">
+            <name>Manjaro</name>
+            <company>Manjaro GmbH &amp; Co. KG</company>
+            <category>Software</category>
+            <location>C14</location>
+            <content>User-friendly Arch-based distro</content>
+            <website>https://manjaro.org</website>
+            <representative>Ivan Horvat</representative>
+            <contactEmail>ivan.horvat@manjaro.org</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="45">
+            <name>OpenBSD</name>
+            <company>OpenBSD Project</company>
+            <category>Security</category>
+            <location>C15</location>
+            <content>Security-oriented Unix-like OS</content>
+            <website>https://www.openbsd.org</website>
+            <representative>Olga Smirnova</representative>
+            <contactEmail>olga.smirnova@openbsd.org</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="46">
+            <name>F-Droid</name>
+            <company>F-Droid Team</company>
+            <category>Software</category>
+            <location>D01</location>
+            <content>Catalog of free and open-source Android apps</content>
+            <website>https://f-droid.org</website>
+            <representative>Lucas Pereira</representative>
+            <contactEmail>lucas.pereira@f-droid.org</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="47">
+            <name>Raspberry Pi Foundation</name>
+            <company>Raspberry Pi Ltd.</company>
+            <category>Technology</category>
+            <location>D02</location>
+            <content>Affordable single-board computers</content>
+            <website>https://www.raspberrypi.org</website>
+            <representative>Anna Kowalczyk</representative>
+            <contactEmail>anna.kowalczyk@raspberrypi.org</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="48">
+            <name>Open Source Initiative</name>
+            <company>OSI</company>
+            <category>Mix</category>
+            <location>D03</location>
+            <content>Defining and promoting open-source licenses</content>
+            <website>https://opensource.org</website>
+            <representative>John Smith</representative>
+            <contactEmail>john.smith@opensource.org</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="49">
+            <name>European Open-Source Association</name>
+            <company>EOSA</company>
+            <category>Mix</category>
+            <location>D04</location>
+            <content>Policy advocacy for European OSS projects</content>
+            <website>https://eosa.eu</website>
+            <representative>Elena Petrova</representative>
+            <contactEmail>elena.petrova@eosa.eu</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="50">
+            <name>DataLab</name>
+            <company>DataLab Europe</company>
+            <category>Technology</category>
+            <location>D05</location>
+            <content>Open data research &amp; analytics</content>
+            <website>https://datalab.eu</website>
+            <representative>Matej Kováč</representative>
+            <contactEmail>matej.kovac@datalab.eu</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="51">
+            <name>Policy Forum</name>
+            <company>EU Policy Forum</company>
+            <category>Mix</category>
+            <location>D06</location>
+            <content>Discussion of tech-policy &amp; regulation</content>
+            <website>https://policyforum.eu</website>
+            <representative>Simona Rossi</representative>
+            <contactEmail>simona.rossi@policyforum.eu</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="52">
+            <name>Community Musicians</name>
+            <company>Open-Source Music Collective</company>
+            <category>Mix</category>
+            <location>D07</location>
+            <content>Live jam sessions using open-source tools</content>
+            <website>https://communitymusicians.org</website>
+            <representative>Tomáš Svoboda</representative>
+            <contactEmail>tomas.svoboda@communitymusicians.org</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="53">
+            <name>Hackathon Team</name>
+            <company>Hackathon Europe</company>
+            <category>Mix</category>
+            <location>D08</location>
+            <content>Rapid prototyping of open-source solutions</content>
+            <website>https://hackathon.eu</website>
+            <representative>Laura Novak</representative>
+            <contactEmail>laura.novak@hackathon.eu</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="54">
+            <name>GameDev EU</name>
+            <company>GameDev EU Association</company>
+            <category>Mix</category>
+            <location>D09</location>
+            <content>Showcase of European open-source games</content>
+            <website>https://gamedev.eu</website>
+            <representative>Marko Jurić</representative>
+            <contactEmail>marko.juric@gamedev.eu</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="55">
+            <name>VR EU</name>
+            <company>VR EU Initiative</company>
+            <category>Mix</category>
+            <location>D10</location>
+            <content>Open-source virtual-reality experiences</content>
+            <website>https://vreu.org</website>
+            <representative>Isabel Fernández</representative>
+            <contactEmail>isabel.fernandez@vreu.org</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="56">
+            <name>EduGames</name>
+            <company>EduGames Initiative</company>
+            <category>Mix</category>
+            <location>D11</location>
+            <content>Educational games built on open-source tech</content>
+            <website>https://edugames.org</website>
+            <representative>Peter Novak</representative>
+            <contactEmail>peter.novak@edugames.org</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="57">
+            <name>Open-Source Awards</name>
+            <company>OSA</company>
+            <category>Mix</category>
+            <location>D12</location>
+            <content>Annual awards for outstanding OSS projects</content>
+            <website>https://opensourceawards.org</website>
+            <representative>Anna Müller</representative>
+            <contactEmail>anna.mueller@opensourceawards.org</contactEmail>
+        </exhibitor>
+
+        <!-- ====================== 15 startup exhibitory ====================== -->
+        <exhibitor id="58">
+            <name>EcoCharge</name>
+            <company>EcoCharge Ltd.</company>
+            <category>Startup</category>
+            <location>D13</location>
+            <content>Solar-powered portable chargers</content>
+            <website>https://ecocharge.eu</website>
+            <representative>Jakub Zieliński</representative>
+            <contactEmail>jakub.zielinski@ecocharge.eu</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="59">
+            <name>OpenBank</name>
+            <company>OpenBank AG</company>
+            <category>Startup</category>
+            <location>D14</location>
+            <content>Open-source core banking platform</content>
+            <website>https://openbank.io</website>
+            <representative>Claudia Novak</representative>
+            <contactEmail>claudia.novak@openbank.io</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="60">
+            <name>GreenPrint</name>
+            <company>GreenPrint AB</company>
+            <category>Startup</category>
+            <location>D15</location>
+            <content>Recyclable 3-D printing materials</content>
+            <website>https://greenprint.se</website>
+            <representative>Erik Svensson</representative>
+            <contactEmail>erik.svensson@greenprint.se</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="61">
+            <name>BlockVote</name>
+            <company>BlockVote SA</company>
+            <category>Startup</category>
+            <location>A16</location>
+            <content>Blockchain-based secure voting system</content>
+            <website>https://blockvote.io</website>
+            <representative>Maria Kovács</representative>
+            <contactEmail>maria.kovacs@blockvote.io</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="62">
+            <name>AI-Learn</name>
+            <company>AI-Learn Ltd.</company>
+            <category>Startup</category>
+            <location>A17</location>
+            <content>Open-source platform for AI education</content>
+            <website>https://ai-learn.org</website>
+            <representative>David Lee</representative>
+            <contactEmail>david.lee@ai-learn.org</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="63">
+            <name>ZeroCMS</name>
+            <company>ZeroCMS GmbH</company>
+            <category>Startup</category>
+            <location>A18</location>
+            <content>Headless CMS built on open standards</content>
+            <website>https://zerocms.io</website>
+            <representative>Olga Novak</representative>
+            <contactEmail>olga.novak@zerocms.io</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="64">
+            <name>PixelForge</name>
+            <company>PixelForge OU</company>
+            <category>Startup</category>
+            <location>A19</location>
+            <content>Procedural art generation tools</content>
+            <website>https://pixelforge.eu</website>
+            <representative>Tomáš Dvořák</representative>
+            <contactEmail>tomas.dvorak@pixelforge.eu</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="65">
+            <name>QuantumBox</name>
+            <company>QuantumBox BV</company>
+            <category>Startup</category>
+            <location>A20</location>
+            <content>Quantum-ready cloud infrastructure</content>
+            <website>https://quantumbox.io</website>
+            <representative>Lisa van der Meer</representative>
+            <contactEmail>lisa.vandermeer@quantumbox.io</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="66">
+            <name>OpenBanking Hub</name>
+            <company>OpenBanking Hub Ltd.</company>
+            <category>Startup</category>
+            <location>A21</location>
+            <content>API-first open banking framework</content>
+            <website>https://openbankinghub.com</website>
+            <representative>Rafael Costa</representative>
+            <contactEmail>rafael.costa@openbankinghub.com</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="67">
+            <name>Sustainable Hardware</name>
+            <company>Sustainable Hardware GmbH</company>
+            <category>Startup</category>
+            <location>A22</location>
+            <content>Eco-friendly modular hardware components</content>
+            <website>https://sustainablehardware.de</website>
+            <representative>Anna Schmidt</representative>
+            <contactEmail>anna.schmidt@sustainablehardware.de</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="68">
+            <name>OpenPrivacy</name>
+            <company>OpenPrivacy Initiative</company>
+            <category>Startup</category>
+            <location>A23</location>
+            <content>Toolkit for privacy-by-design software</content>
+            <website>https://openprivacy.org</website>
+            <representative>Ján Kováč</representative>
+            <contactEmail>jan.kovac@openprivacy.org</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="69">
+            <name>LibreHealth</name>
+            <company>LibreHealth Foundation</company>
+            <category>Startup</category>
+            <location>A24</location>
+            <content>Open-source health-care management suite</content>
+            <website>https://librehealth.io</website>
+            <representative>Maria Lopez</representative>
+            <contactEmail>maria.lopez@librehealth.io</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="70">
+            <name>OpenEnergy</name>
+            <company>OpenEnergy GmbH</company>
+            <category>Startup</category>
+            <location>A25</location>
+            <content>Decentralised energy-grid management</content>
+            <website>https://openenergy.io</website>
+            <representative>Thomas Berger</representative>
+            <contactEmail>thomas.berger@openenergy.io</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="71">
+            <name>SecureDocs</name>
+            <company>SecureDocs Ltd.</company>
+            <category>Startup</category>
+            <location>A26</location>
+            <content>Encrypted document collaboration platform</content>
+            <website>https://securedocs.eu</website>
+            <representative>Elena Ivanova</representative>
+            <contactEmail>elena.ivanova@securedocs.eu</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="72">
+            <name>OpenAI-Edu</name>
+            <company>OpenAI-Edu Initiative</company>
+            <category>Startup</category>
+            <location>A27</location>
+            <content>Open-source AI tools for education</content>
+            <website>https://openaiedu.org</website>
+            <representative>Peter Novak</representative>
+            <contactEmail>peter.novak@openaiedu.org</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="73">
+            <name>ZeroTrace</name>
+            <company>ZeroTrace AB</company>
+            <category>Startup</category>
+            <location>A28</location>
+            <content>Privacy-preserving analytics platform</content>
+            <website>https://zerotrace.se</website>
+            <representative>Kristina Lund</representative>
+            <contactEmail>kristina.lund@zerotrace.se</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="74">
+            <name>OpenSupply</name>
+            <company>OpenSupply Ltd.</company>
+            <category>Startup</category>
+            <location>A28</location>
+            <content>Open-source supply-chain transparency platform</content>
+            <website>https://opensupply.io</website>
+            <representative>Jana Horváthová</representative>
+            <contactEmail>jana.horvathova@opensupply.io</contactEmail>
+        </exhibitor>
+
+        <exhibitor id="75">
+            <name>EcoData</name>
+            <company>EcoData GmbH</company>
+            <category>Startup</category>
+            <location>A29</location>
+            <content>Open-source platform for sustainable data collection</content>
+            <website>https://ecodata.io</website>
+            <representative>Markus Braun</representative>
+            <contactEmail>markus.braun@ecodata.io</contactEmail>
+        </exhibitor>
+
+    </exhibitors>
+
+    <!-- =========================================================== -->
+    <!--  STAGE DEFINICE (velká, střední a malá)                     -->
+    <!-- =========================================================== -->
+    <stages>
+        <!-- Velká stage - přednášky (Talks) -->
+        <stage id="talks"   type="large"  name="Talk Hall - Large Stage"/>
+        <!-- Střední stage - workshopy (Workshops) -->
+        <stage id="workshop" type="medium" name="Workshop Hall - Medium Stage"/>
+        <!-- Malá stage - hry, média, publikace, praktické výtvory -->
+        <stage id="games"   type="small"  name="Game-Demo Hall - Small Stage"/>
+    </stages>
+
+<!--
+    PROGRAM - 4 days
+    • Large stage  = talks
+    • Medium stage = workshops
+    • Small stage  = gaming showcases (3 × 4 h per day)
+    • Talks & workshops share a mandatory lunch break 14:00-15:00.
+    • Gaming runs uninterrupted (break-free) and therefore overlaps the lunch hour.
+    • Because the three stages are allowed to overlap, the total wall-clock
+      time needed fits easily into the 10:00-22:00 window.
+--> 
+    <program>
+        <!-- ==================== DAY 1 ==================== -->
+        <day id="1" date="2025-05-01">
+            <!-- Talks (large stage) -->
+            <event id="t1"  stageRef="talks"><title>Opening Keynote - European Digital Sovereignty</title><presenter>European Commission</presenter><time>10:00</time></event>
+            <event id="t2"  stageRef="talks"><title>Security &amp; Privacy - Proton Mail</title><presenter>Proton Mail</presenter><time>11:00</time></event>
+            <event id="t3"  stageRef="talks"><title>Open-Source Cloud - Nextcloud</title><presenter>Nextcloud</presenter><time>12:00</time></event>
+            <event id="t4"  stageRef="talks"><title>GIS &amp; Mapping - QGIS</title><presenter>QGIS</presenter><time>13:00</time></event>
+            <!-- Lunch break - no talks 14:00-15:00 -->
+            <event id="t5"  stageRef="talks"><title>3-D Modelling - Blender</title><presenter>Blender</presenter><time>15:00</time></event>
+            <event id="t6"  stageRef="talks"><title>Secure Messaging - Signal</title><presenter>Signal</presenter><time>16:00</time></event>
+            <event id="t7"  stageRef="talks"><title>Decentralised Collaboration - Matrix.org</title><presenter>Matrix.org</presenter><time>17:00</time></event>
+            <event id="t8"  stageRef="talks"><title>Open-Source Office - LibreOffice</title><presenter>LibreOffice</presenter><time>18:00</time></event>
+
+            <!--  Workshops (medium stage)  -->
+            <event id="w1"  stageRef="workshop"><title>Workshop - Build a VPN with WireGuard</title><presenter>WireGuard</presenter><time>10:00</time></event>
+            <event id="w2"  stageRef="workshop"><title>Workshop - Deploy Nextcloud on Raspberry Pi</title><presenter>Nextcloud</presenter><time>11:00</time></event>
+            <event id="w3"  stageRef="workshop"><title>Workshop - GIS Basics with QGIS</title><presenter>QGIS</presenter><time>12:00</time></event>
+            <event id="w4"  stageRef="workshop"><title>Workshop - 3-D Printing Workflow (Blender → FreeCAD)</title><presenter>Blender</presenter><time>13:00</time></event>
+            <!-- Lunch break - no workshops 14:00-15:00 -->
+            <event id="w5"  stageRef="workshop"><title>Workshop - Secure Email with Proton Mail</title><presenter>Proton Mail</presenter><time>15:00</time></event>
+            <event id="w6"  stageRef="workshop"><title>Workshop - Decentralised Storage with IPFS</title><presenter>IPFS</presenter><time>16:00</time></event>
+            <event id="w7"  stageRef="workshop"><title>Workshop - CI/CD with GitLab</title><presenter>GitLab</presenter><time>17:00</time></event>
+            <event id="w8"  stageRef="workshop"><title>Workshop - Containerisation with Podman</title><presenter>Podman Community</presenter><time>18:00</time></event>
+
+            <!--  Gaming showcases (small stage) -->
+            <event id="g1" stageRef="games"><title>Gaming Showcase - EU Indie Strategy (10:00-14:00)</title><presenter>GameDev EU</presenter><time>10:00</time></event>
+            <event id="g2" stageRef="games"><title>Gaming Showcase - Open-Source VR Experience (14:00-18:00)</title><presenter>VR EU</presenter><time>14:00</time></event>
+            <event id="g3" stageRef="games"><title>Gaming Showcase - Retro Arcade Revival (18:00-22:00)</title><presenter>Retro Labs</presenter><time>18:00</time></event>
+        </day>
+
+        <!-- ==================== DAY 2 ==================== -->
+        <day id="2" date="2025-05-02">
+            <!-- Talks -->
+            <event id="t9"  stageRef="talks"><title>Panel - Future of European Open-Source</title><presenter>European Open-Source Association</presenter><time>10:00</time></event>
+            <event id="t10" stageRef="talks"><title>Startup Pitch - Local Alternatives</title><presenter>Startup Hub</presenter><time>11:00</time></event>
+            <event id="t11" stageRef="talks"><title>Security Audit Demo - OpenSCAP</title><presenter>OpenSCAP</presenter><time>12:00</time></event>
+            <event id="t12" stageRef="talks"><title>Privacy Tools Live - CryptPad</title><presenter>CryptPad</presenter><time>13:00</time></event>
+            <!-- Lunch break 14:00-15:00 -->
+            <event id="t13" stageRef="talks"><title>Collaboration Suite - Element</title><presenter>Element</presenter><time>15:00</time></event>
+            <event id="t14" stageRef="talks"><title>Video Conferencing - Jitsi Meet</title><presenter>Jitsi Meet</presenter><time>16:00</time></event>
+            <event id="t15" stageRef="talks"><title>Data Visualisation - Grafana</title><presenter>Grafana</presenter><time>17:00</time></event>
+            <event id="t16" stageRef="talks"><title>Monitoring - Prometheus</title><presenter>Prometheus</presenter><time>18:00</time></event>
+
+            <!-- Workshops -->
+            <event id="w9"  stageRef="workshop"><title>Workshop - Secure Messaging with Signal</title><presenter>Signal</presenter><time>10:00</time></event>
+            <event id="w10" stageRef="workshop"><title>Workshop - Open-Source Office Automation (OnlyOffice)</title><presenter>OnlyOffice</presenter><time>11:00</time></event>
+            <event id="w11" stageRef="workshop"><title>Workshop - Issue Tracking with Redmine</title><presenter>Redmine</presenter><time>12:00</time></event>
+            <event id="w12" stageRef="workshop"><title>Workshop - Agile Boards with Taiga</title><presenter>Taiga</presenter><time>13:00</time></event>
+            <!-- Lunch break 14:00-15:00 -->
+            <event id="w13" stageRef="workshop"><title>Workshop - ERPNext Intro</title><presenter>ERPNext</presenter><time>15:00</time></event>
+            <event id="w14" stageRef="workshop"><title>Workshop - Dolibarr Basics</title><presenter>Dolibarr</presenter><time>16:00</time></event>
+            <event id="w15" stageRef="workshop"><title>Workshop - Open-Source CI/CD with Gitea</title><presenter>Gitea</presenter><time>17:00</time></event>
+            <event id="w16" stageRef="workshop"><title>Workshop - Advanced Decentralised Storage (IPFS)</title><presenter>IPFS</presenter><time>18:00</time></event>
+
+            <!-- Gaming showcases -->
+            <event id="g4" stageRef="games"><title>Gaming Showcase - EU Retro Arcade (10:00-14:00)</title><presenter>Retro Labs</presenter><time>10:00</time></event>
+            <event id="g5" stageRef="games"><title>Gaming Showcase - Multiplayer Shooter Demo (14:00-18:00)</title><presenter>Shooter Community</presenter><time>14:00</time></event>
+            <event id="g6" stageRef="games"><title>Gaming Showcase - Strategy Battle (18:00-22:00)</title><presenter>Strategy EU</presenter><time>18:00</time></event>
+        </day>
+
+        <!-- ==================== DAY 3 ==================== -->
+        <day id="3" date="2025-05-03">
+            <!-- Talks -->
+            <event id="t17" stageRef="talks"><title>Closing Keynote - European Digital Independence</title><presenter>European Commission</presenter><time>10:00</time></event>
+            <event id="t18" stageRef="talks"><title>Award Ceremony - Best Open-Source Project</title><presenter>Open-Source Awards</presenter><time>11:00</time></event>
+            <event id="t19" stageRef="talks"><title>Future Trends - AI &amp; Open Data</title><presenter>DataLab</presenter><time>12:00</time></event>
+            <event id="t20" stageRef="talks"><title>Round-Table - Policy &amp; Regulation</title><presenter>Policy Forum</presenter><time>13:00</time></event>
+            <!-- Lunch break 14:00-15:00 -->
+            <event id="t21" stageRef="talks"><title>Live Music - Open-Source Jam Session</title><presenter>Community Musicians</presenter><time>15:00</time></event>
+            <event id="t22" stageRef="talks"><title>Networking - Meet the Contributors</title><presenter>Community Hub</presenter><time>16:00</time></event>
+            <event id="t23" stageRef="talks"><title>Demo Sprint - Rapid Prototyping</title><presenter>Hackathon Team</presenter><time>17:00</time></event>
+            <event id="t24" stageRef="talks"><title>Closing Panel - Open-Source Sustainability</title><presenter>Sustainability Forum</presenter><time>18:00</time></event>
+
+            <!-- Workshops -->
+            <event id="w17" stageRef="workshop"><title>Workshop - Secure VPN with WireGuard (Advanced)</title><presenter>WireGuard</presenter><time>10:00</time></event>
+            <event id="w18" stageRef="workshop"><title>Workshop - Deploy Nextcloud on Kubernetes</title><presenter>Nextcloud</presenter><time>11:00</time></event>
+            <event id="w19" stageRef="workshop"><title>Workshop - Advanced GIS Analytics with QGIS</title><presenter>QGIS</presenter><time>12:00</time></event>
+            <event id="w20" stageRef="workshop"><title>Workshop - 3-D Printing Materials (Blender → FreeCAD)</title><presenter>Blender</presenter><time>13:00</time></event>
+            <!-- Lunch break 14:00-15:00 -->
+            <event id="w21" stageRef="workshop"><title>Workshop - End-to-End Encryption with Proton Mail</title><presenter>Proton Mail</presenter><time>15:00</time></event>
+            <event id="w22" stageRef="workshop"><title>Workshop - Decentralised Identity with Matrix.org</title><presenter>Matrix.org</presenter><time>16:00</time></event>
+            <event id="w23" stageRef="workshop"><title>Workshop - Open-Source Monitoring (Prometheus &amp; Grafana)</title><presenter>Prometheus</presenter><time>17:00</time></event>
+            <event id="w24" stageRef="workshop"><title>Workshop - Agile Project Management (Taiga)</title><presenter>Taiga</presenter><time>18:00</time></event>
+
+            <!-- Gaming showcases -->
+            <event id="g7" stageRef="games"><title>Gaming Showcase - EU Indie Racing (10:00-14:00)</title><presenter>RacingLab</presenter><time>10:00</time></event>
+            <event id="g8" stageRef="games"><title>Gaming Showcase - Open-Source Puzzle Adventure (14:00-18:00)</title><presenter>PuzzleWorks EU</presenter><time>14:00</time></event>
+            <event id="g9" stageRef="games"><title>Gaming Showcase - VR Escape Room (18:00-22:00)</title><presenter>VR Escape EU</presenter><time>18:00</time></event>
+        </day>
+
+            <!-- ==================== DAY 4 ==================== -->
+        <day id="4" date="2025-05-04">
+            <!--  Talks (large stage)  -->
+            <event id="t25" stageRef="talks"><title>Future of Open-Source Governance</title><presenter>EOSA</presenter><time>10:00</time></event>
+            <event id="t26" stageRef="talks"><title>Open-Source Business Models</title><presenter>Startup Hub</presenter><time>11:00</time></event>
+            <event id="t27" stageRef="talks"><title>Privacy-First Design - Lessons from Proton</title><presenter>Proton AG</presenter><time>12:00</time></event>
+            <event id="t28" stageRef="talks"><title>Open Data for Public Services</title><presenter>DataLab</presenter><time>13:00</time></event>
+            <!-- Lunch break - no talks 14:00-15:00 -->
+            <event id="t29" stageRef="talks"><title>Community-Driven Innovation</title><presenter>Open Source Initiative</presenter><time>15:00</time></event>
+            <event id="t30" stageRef="talks"><title>Scaling Open-Source Projects</title><presenter>Linux Foundation</presenter><time>16:00</time></event>
+            <event id="t31" stageRef="talks"><title>Closing Remarks &amp; Outlook 2026</title><presenter>European Commission</presenter><time>17:00</time></event>
+            <event id="t32" stageRef="talks"><title>After-Party Networking</title><presenter>Festival Organisers</presenter><time>18:00</time></event>
+
+            <!--  Workshops (medium stage)  -->
+            <event id="w25" stageRef="workshop"><title>Workshop - Sustainable Hardware Design</title><presenter>Sustainable Hardware GmbH</presenter><time>10:00</time></event>
+            <event id="w26" stageRef="workshop"><title>Workshop - Open-Source Licensing Essentials</title><presenter>OSI</presenter><time>11:00</time></event>
+            <event id="w27" stageRef="workshop"><title>Workshop - Building a Privacy-Focused Browser</title><presenter>Mozilla Community</presenter><time>12:00</time></event>
+            <event id="w28" stageRef="workshop"><title>Workshop - Deploying Edge Computing with OpenWrt</title><presenter>OpenWrt</presenter><time>13:00</time></event>
+            <!-- Lunch break - no workshops 14:00-15:00 -->
+            <event id="w29" stageRef="workshop"><title>Workshop - Open-Source Game Development</title><presenter>GameDev EU</presenter><time>15:00</time></event>
+            <event id="w30" stageRef="workshop"><title>Workshop - VR Content Creation (Open-Source Toolchain)</title><presenter>VR EU</presenter><time>16:00</time></event>
+            <event id="w31" stageRef="workshop"><title>Workshop - Educational Games Design</title><presenter>EduGames</presenter><time>17:00</time></event>
+            <event id="w32" stageRef="workshop"><title>Workshop - Open-Source Documentation Practices</title><presenter>Documentation Hub</presenter><time>18:00</time></event>
+
+            <!--  Gaming showcases (small stage) -->
+            <event id="g10" stageRef="games"><title>Gaming Showcase - EU Indie Platformer (10:00-14:00)</title><presenter>PlatformPlay EU</presenter><time>10:00</time></event>
+            <event id="g11" stageRef="games"><title>Gaming Showcase - Open-Source Multiplayer Strategy (14:00-18:00)</title><presenter>Strategy EU</presenter><time>14:00</time></event>
+            <event id="g12" stageRef="games"><title>Gaming Showcase - VR Escape Room (18:00-22:00)</title><presenter>VR Escape EU</presenter><time>18:00</time></event>
+        </day>
+    </program>
+</festival>

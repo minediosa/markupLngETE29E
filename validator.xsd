@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://example.com/festival"
+           xmlns="http://example.com/festival"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+
+    <!-- ========================================================= -->
+    <!--  SIMPLE TYPES                                               -->
+    <!-- ========================================================= -->
+
+    <!-- Časový formát – jen celé půlhodiny (00, 30) -->
+    <xs:simpleType name="time">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="([01][0-9]|2[0-3]):(00|30)"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Číslo haly – A‑D + 01‑30 -->
+    <xs:simpleType name="hallNumber">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-D](0[1-9]|1[0-9]|2[0-9]|30)"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Kategorie exhibitorů – lze rozšířit přidáním nových hodnot -->
+    <xs:simpleType name="category">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Security"/>
+            <xs:enumeration value="Technology"/>
+            <xs:enumeration value="Software"/>
+            <xs:enumeration value="Mix"/>
+            <xs:enumeration value="Startup"/>   
+            <!-- další kategorie lze doplnit sem -->
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- E‑mail – jednoduchý regulární výraz -->
+    <xs:simpleType name="email">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[^@\s]+@[^@\s]+\.[^@\s]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- URL – základní kontrola (http/https) -->
+    <xs:simpleType name="url">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="https?://.+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- ========================================================= -->
+    <!--  COMPLEX TYPES                                            -->
+    <!-- ========================================================= -->
+
+    <!-- Den festivalu – musí mít alespoň 2 venues -->
+    <xs:complexType name="day">
+        <xs:sequence>
+            <xs:element name="venue" type="xs:string" minOccurs="2" maxOccurs="unbounded"/>
+            <xs:element name="eventTime" type="time" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:integer" use="required"/>
+        <xs:attribute name="date" type="xs:date" use="optional"/>
+    </xs:complexType>
+
+    <!-- Exhibitor (stánek) -->
+    <xs:complexType name="exhibitor">
+        <xs:sequence>
+            <xs:element name="name"          type="xs:string"/>
+            <xs:element name="company"       type="xs:string"/>
+            <xs:element name="category"      type="category"/>
+            <xs:element name="location"      type="hallNumber"/>
+            <xs:element name="content"       type="xs:string"/>
+            <xs:element name="website"       type="url"/>
+            <xs:element name="representative" type="xs:string"/>
+            <xs:element name="contactEmail"  type="email"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:integer" use="required"/>
+    </xs:complexType>
+
+    <!-- Kolekce exhibitorů – minimálně 60, maximálně 80 (aby byl prostor pro startupy) -->
+    <xs:complexType name="exhibitors">
+        <xs:sequence>
+            <xs:element name="exhibitor"
+                        type="exhibitor"
+                        minOccurs="60"
+                        maxOccurs="80"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Stage (scéna) – typ určuje velikost -->
+    <xs:complexType name="stage">
+        <xs:attribute name="id"   type="xs:string" use="required"/>
+        <xs:attribute name="type" type="xs:string" use="required"/>
+        <xs:attribute name="name" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <!-- Event (programová položka) – může patřit k libovolné stage -->
+    <xs:complexType name="event">
+        <xs:sequence>
+            <xs:element name="title"      type="xs:string"/>
+            <xs:element name="presenter"  type="xs:string"/>
+            <xs:element name="time"       type="time"/>
+        </xs:sequence>
+        <xs:attribute name="id"        type="xs:integer" use="required"/>
+        <xs:attribute name="stageRef"  type="xs:string"  use="required"/>
+    </xs:complexType>
+
+    <!-- ========================================================= -->
+    <!--  ROOT ELEMENTS                                             -->
+    <!-- ========================================================= -->
+
+    <!-- Hlavní element festivalu -->
+    <xs:element name="festival">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- Globální metadata festivalu -->
+                <xs:element name="name"       type="xs:string"/>
+                <xs:element name="edition"    type="xs:integer"/>
+                <xs:element name="location"   type="xs:string"/>
+                <xs:element name="startDate"  type="xs:date"/>
+                <xs:element name="endDate"    type="xs:date"/>
+
+                <!-- Dny (min. 3) -->
+                <xs:element name="day"
+                            type="day"
+                            minOccurs="3"
+                            maxOccurs="5"/>
+
+                <!-- Scény (talks, workshops, games) -->
+                <xs:element name="stages">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="stage" type="stage" minOccurs="3" maxOccurs="3"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <!-- Exhibitors (statické stánky) -->
+                <xs:element name="exhibitors" type="exhibitors"/>
+            </xs:sequence>
+            <!-- Volitelné atributy festivalu (např. id) – lze doplnit -->
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
