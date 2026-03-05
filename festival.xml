@@ -9,21 +9,6 @@
     <!-- ============================================================= -->
     <!--  1) Statické exhibitory (stánky) - 60 + 15 startupů          -->
     <!-- ============================================================= -->
-<!--
-    Kompletní seznam všech exhibitorů (stánků) dle aktualizovaného
-    validator.xsd.  Každý exhibitor obsahuje:
-      • name
-      • company
-      • category (Security, Technology, Software, Mix nebo Startup)
-      • location (hala A-D + číslo 01-30)
-      • content - stručný popis
-      • website - URL
-      • representative - jméno osoby, která stand zastupuje
-      • contactEmail - e-mailová adresa
-    Celkem 75 exhibitorů (60 běžných + 15 startupů) - všechny splňují
-    požadavky na minimální počet a zároveň poskytují prostor pro
-    startupy, jak bylo požadováno.
--->
     <exhibitors>
         <!-- ====================== 60 běžných exhibitorů ====================== -->
         <exhibitor id="1">
@@ -866,16 +851,9 @@
         <stage id="games"   type="small"  name="Game-Demo Hall - Small Stage"/>
     </stages>
 
-<!--
-    PROGRAM - 4 days
-    • Large stage  = talks
-    • Medium stage = workshops
-    • Small stage  = gaming showcases (3 × 4 h per day)
-    • Talks & workshops share a mandatory lunch break 14:00-15:00.
-    • Gaming runs uninterrupted (break-free) and therefore overlaps the lunch hour.
-    • Because the three stages are allowed to overlap, the total wall-clock
-      time needed fits easily into the 10:00-22:00 window.
---> 
+    <!-- ============================================================= -->
+    <!--  2) Programy (stage) - 64 Velka+Stredni + 12 Gaming           -->
+    <!-- ============================================================= -->
     <program>
         <!-- ==================== DAY 1 ==================== -->
         <day id="1" date="2025-05-01">
