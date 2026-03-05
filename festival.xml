@@ -1,0 +1,7 @@
+<!-- well-formed XML
+    Min. 3 dny | Min. 2 místa (venues) | Min. 60 účinkujících | Min. 60 programových položek (events)
+    Minimální datové entity (bez předepsaného modelu):
+        festival,
+        místa/scény (venues/stages),
+        účinkující (performers),
+        programové položky - vystoupení (events).-->
