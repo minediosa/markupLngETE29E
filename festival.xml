@@ -3,8 +3,8 @@
     name="European Open-Source &amp; Alternative Tech Fair"
     edition="1"
     location="Varšava (Polsko)"
-    startDate="2025-05-01"
-    endDate="2025-05-04">
+    startDate="2027-05-01"
+    endDate="2027-05-04">
 
     <!-- ============================================================= -->
     <!--  1) Statické exhibitory (stánky) - 60 + 15 startupů          -->
@@ -856,7 +856,7 @@
     <!-- ============================================================= -->
     <program>
         <!-- ==================== DAY 1 ==================== -->
-        <day id="1" date="2025-05-01">
+        <day id="1" date="2027-05-01">
             <!-- Talks (large stage) -->
             <event id="t1"  stageRef="talks"><title>Opening Keynote - European Digital Sovereignty</title><presenter>European Commission</presenter><time>10:00</time></event>
             <event id="t2"  stageRef="talks"><title>Security &amp; Privacy - Proton Mail</title><presenter>Proton Mail</presenter><time>11:00</time></event>
@@ -886,7 +886,7 @@
         </day>
 
         <!-- ==================== DAY 2 ==================== -->
-        <day id="2" date="2025-05-02">
+        <day id="2" date="2027-05-02">
             <!-- Talks -->
             <event id="t9"  stageRef="talks"><title>Panel - Future of European Open-Source</title><presenter>European Open-Source Association</presenter><time>10:00</time></event>
             <event id="t10" stageRef="talks"><title>Startup Pitch - Local Alternatives</title><presenter>Startup Hub</presenter><time>11:00</time></event>
@@ -916,7 +916,7 @@
         </day>
 
         <!-- ==================== DAY 3 ==================== -->
-        <day id="3" date="2025-05-03">
+        <day id="3" date="2027-05-03">
             <!-- Talks -->
             <event id="t17" stageRef="talks"><title>Closing Keynote - European Digital Independence</title><presenter>European Commission</presenter><time>10:00</time></event>
             <event id="t18" stageRef="talks"><title>Award Ceremony - Best Open-Source Project</title><presenter>Open-Source Awards</presenter><time>11:00</time></event>
@@ -946,7 +946,7 @@
         </day>
 
             <!-- ==================== DAY 4 ==================== -->
-        <day id="4" date="2025-05-04">
+        <day id="4" date="2027-05-04">
             <!--  Talks (large stage)  -->
             <event id="t25" stageRef="talks"><title>Future of Open-Source Governance</title><presenter>EOSA</presenter><time>10:00</time></event>
             <event id="t26" stageRef="talks"><title>Open-Source Business Models</title><presenter>Startup Hub</presenter><time>11:00</time></event>
